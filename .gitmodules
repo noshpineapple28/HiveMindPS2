@@ -1,0 +1,6 @@
+[submodule "lib/socket.io-client-cpp"]
+	path = lib/socket.io-client-cpp
+	url = git@github.com:socketio/socket.io-client-cpp.git
+[submodule "lib/simpleble"]
+	path = lib/simpleble
+	url = git@github.com:simpleble/simpleble.git
