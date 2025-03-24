@@ -4,6 +4,7 @@
 #include "connection_listener.hpp"
 
 #include "client.hpp"
+#include "ble_handler.hpp"
 
 sio::socket::ptr current_socket;
 uint8_t was_updated = 0;
@@ -59,8 +60,21 @@ void init_socketio()
                                                             cntrl.l_dx = data->get_map()["LX"]->get_int();
                                                             cntrl.l_dy = data->get_map()["LY"]->get_int();
                                                             // send state of the controller to ps2
+                                                            std::cout << std::hex << cntrl.button_map_1 << std::endl;
                                                             was_updated = 1;
                                                             l.lock.unlock(); }));
-    h.sync_close();
-    h.clear_con_listeners();
+
+    // begin polling
+    printf("Beginning polling\n");
+    controller *cntrl = 0;
+    while (1)
+    {
+        // if 0, wasnt updated recently
+        //      otherwise, update!!
+        cntrl = update_controller();
+        if (cntrl)
+        {
+            write_to_ps2(cntrl);
+        }
+    }
 }

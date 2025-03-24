@@ -12,18 +12,4 @@ int main()
         return 0;
     printf("Initializing SocketIO\n");
     init_socketio();
-
-    // begin polling
-    printf("Beginning polling\n");
-    controller *cntrl = 0;
-    while (1)
-    {
-        // if 0, wasnt updated recently
-        //      otherwise, update!!
-        cntrl = update_controller();
-        if (cntrl)
-        {
-            write_to_ps2(cntrl);
-        }
-    }
 }
