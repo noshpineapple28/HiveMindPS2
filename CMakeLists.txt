@@ -15,14 +15,17 @@ add_executable(HiveMindPS2 ${SRC_FILES})
 ####################################################
 #                   LIBRARIES
 ####################################################
+add_subdirectory(./lib/wiiuse)
 add_subdirectory(./lib/socket.io-client-cpp)
 add_subdirectory(./lib/simpleble/simpleble)
 target_include_directories(
     HiveMindPS2 PRIVATE
+    ./lib/wiiuse/src
     ./lib/socket.io-client-cpp
     ./lib/simpleble/simpleble/include/simpleble_c
     ./include
 )
+target_link_libraries(HiveMindPS2 wiiuse)
 target_link_libraries(HiveMindPS2 sioclient)
 target_link_libraries(HiveMindPS2 Threads::Threads)
 target_link_libraries(HiveMindPS2 simpleble::simpleble-c)

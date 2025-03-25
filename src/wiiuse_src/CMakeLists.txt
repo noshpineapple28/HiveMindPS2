@@ -1,0 +1,28 @@
+
+
+set(SOURCES
+	${CMAKE_CURRENT_LIST_DIR}/classic.c
+	${CMAKE_CURRENT_LIST_DIR}/dynamics.c
+	${CMAKE_CURRENT_LIST_DIR}/events.c
+	${CMAKE_CURRENT_LIST_DIR}/guitar_hero_3.c
+	${CMAKE_CURRENT_LIST_DIR}/io.c
+	${CMAKE_CURRENT_LIST_DIR}/ir.c
+	${CMAKE_CURRENT_LIST_DIR}/nunchuk.c
+	${CMAKE_CURRENT_LIST_DIR}/wiiuse.c
+	${CMAKE_CURRENT_LIST_DIR}/wiiboard.c
+	${CMAKE_CURRENT_LIST_DIR}/classic.h
+	${CMAKE_CURRENT_LIST_DIR}/definitions.h
+	${CMAKE_CURRENT_LIST_DIR}/definitions_os.h
+	${CMAKE_CURRENT_LIST_DIR}/dynamics.h
+	${CMAKE_CURRENT_LIST_DIR}/events.h
+	${CMAKE_CURRENT_LIST_DIR}/guitar_hero_3.h
+	${CMAKE_CURRENT_LIST_DIR}/motion_plus.h
+	${CMAKE_CURRENT_LIST_DIR}/motion_plus.c
+	${CMAKE_CURRENT_LIST_DIR}/io.h
+	${CMAKE_CURRENT_LIST_DIR}/ir.h
+	${CMAKE_CURRENT_LIST_DIR}/nunchuk.h
+	${CMAKE_CURRENT_LIST_DIR}/os.h
+	${CMAKE_CURRENT_LIST_DIR}/util.c
+	${CMAKE_CURRENT_LIST_DIR}/wiiuse_internal.h
+	${CMAKE_CURRENT_LIST_DIR}/wiiboard.h
+	PARENT_SCOPE)

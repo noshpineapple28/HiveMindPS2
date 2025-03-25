@@ -4,3 +4,6 @@
 [submodule "lib/simpleble"]
 	path = lib/simpleble
 	url = git@github.com:simpleble/simpleble.git
+[submodule "lib/wiiuse"]
+	path = lib/wiiuse
+	url = git@github.com:wiiuse/wiiuse.git

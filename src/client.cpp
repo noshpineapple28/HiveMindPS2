@@ -5,6 +5,7 @@
 
 #include "client.hpp"
 #include "ble_handler.hpp"
+#include "wiimote_handle.h"
 
 sio::socket::ptr current_socket;
 uint8_t was_updated = 0;
@@ -35,7 +36,8 @@ void init_socketio()
     h.set_open_listener(std::bind(&connection_listener::on_connected, &l));
     h.set_close_listener(std::bind(&connection_listener::on_close, &l, std::placeholders::_1));
     h.set_fail_listener(std::bind(&connection_listener::on_fail, &l));
-    h.connect("http://localhost:3000/");
+    // h.connect("http://localhost:3000/");
+    h.connect("http://ps2-presentation-demo-78f5ec8a3894.herokuapp.com/");
 
     l.lock.lock();
     if (!l.connect_finish)
@@ -69,6 +71,7 @@ void init_socketio()
     controller *cntrl = 0;
     while (1)
     {
+        begin_polling();
         // if 0, wasnt updated recently
         //      otherwise, update!!
         cntrl = update_controller();
